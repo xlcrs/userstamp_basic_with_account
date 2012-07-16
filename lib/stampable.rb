@@ -16,7 +16,8 @@ module Sherpa #:nodoc:
           before_create :set_created_by
           belongs_to :created_by, :class_name => "User"
           belongs_to :updated_by, :class_name => "User"
-        end
+		  belongs_to :account        
+		end
       end
     end
     
