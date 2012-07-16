@@ -27,6 +27,7 @@ module Sherpa #:nodoc:
       
       def set_created_by
         self.created_by = User.current
+		self.account    = User.current.account
       end
     end
   end
