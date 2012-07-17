@@ -27,8 +27,9 @@ module Sherpa #:nodoc:
       end
       
       def set_created_by
-        self.created_by = User.current
-		self.account    = User.current.account
+        # There are situations where we want to have someone else create/own the item
+        self.created_by ||= User.current
+	  self.account    ||= User.current.account
       end
     end
   end
